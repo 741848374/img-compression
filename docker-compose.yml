@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: ./gif-compression-backend
+      dockerfile: Dockerfile
+    container_name: gif-backend
+    restart: unless-stopped
+    volumes:
+      # 持久化上传文件
+      - uploads_data:/app/uploads
+
+  frontend:
+    build:
+      context: ./gif-compression-frontend
+      dockerfile: Dockerfile
+    container_name: gif-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  uploads_data:

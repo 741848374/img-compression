@@ -1,0 +1,22 @@
+# 依赖
+gif-compression-backend/node_modules/
+gif-compression-frontend/node_modules/
+
+# 构建产物
+gif-compression-backend/dist/
+gif-compression-frontend/build/
+
+# 上传文件
+gif-compression-backend/uploads/
+
+# 日志
+*.log
+npm-debug.log*
+
+# 环境变量
+.env
+.env.local
+
+# 系统文件
+.DS_Store
+Thumbs.db
