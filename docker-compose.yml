@@ -1,9 +1,9 @@
 services:
   backend:
     build:
-      context: ./gif-compression-backend
+      context: ./compression-backend
       dockerfile: Dockerfile
-    container_name: gif-backend
+    container_name: img-backend
     restart: unless-stopped
     volumes:
       # 持久化上传文件
@@ -11,9 +11,9 @@ services:
 
   frontend:
     build:
-      context: ./gif-compression-frontend
+      context: ./compression-frontend
       dockerfile: Dockerfile
-    container_name: gif-frontend
+    container_name: img-frontend
     restart: unless-stopped
     ports:
       - "80:80"
