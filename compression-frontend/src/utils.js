@@ -4,9 +4,7 @@ export function splitUint8Array(data, separator) {
   const dataLen = data.length;
   let start = 0;
 
-  // 单循环查找分隔符（比嵌套循环快 5~10 倍）
   for (let i = 0; i <= dataLen - sepLen; i++) {
-    // 快速判断：第一个字节匹配，才继续校验
     if (data[i] !== separator[0]) continue;
 
     // 完整匹配分隔符
@@ -28,7 +26,6 @@ export function splitUint8Array(data, separator) {
     }
   }
 
-  // 最后一段（最后一张图）
   if (start < dataLen) {
     result.push(data.slice(start));
   }
